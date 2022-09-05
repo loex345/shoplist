@@ -7,6 +7,9 @@ export default function LandingPage({ setUser }) {
 
     return (
         <main className="LandingPage"> 
+         <aside>
+            <div>
+
         { showAuth ?
             <AuthPage setUser={setUser}/>
             :
@@ -16,6 +19,8 @@ export default function LandingPage({ setUser }) {
           {showAuth ? '': 'Click Here to Sign Up'}  
         </button>
         {/* // render no button when page button click */}
+          </div>
+         </aside>
         </main>
     );
 }

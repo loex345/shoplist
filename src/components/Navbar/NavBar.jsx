@@ -10,9 +10,13 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav>
-      <Link to='/orders'>DashBoard</Link>
+      <Link to='/list/dashboard'>Dashboard</Link>
       &nbsp; | &nbsp;
-      <Link to='/orders/new'>Add</Link>
+      <Link to='/list'>Print List</Link>
+      &nbsp; | &nbsp;
+      <Link to='/list/newItem'>Add List/Item </Link>
+      &nbsp; | &nbsp;
+      <Link to='/list/newList'>Add New List</Link>
       &nbsp; | &nbsp;
       Welcome, {user.name}
       &nbsp; | &nbsp;
