@@ -1,7 +1,7 @@
-require('dotenv').config();
-require('./config/database');
+// require('dotenv').config();
+// require('./config/database');
 
-const Grocery = require('./models/grocery');
+// const Grocery = require('./models/grocery');
 
-await Grocery
+// await Grocery
 
