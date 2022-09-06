@@ -28,7 +28,7 @@ export default function Dashboard({ user }){
         <main>
         <h1>Welcome to Dashboard</h1>
         <GroceryList groceryItems={groceryItems} />
-        <RecipeList recipes={lists}/>
+        <RecipeList recipes={lists} />
         </main>
     );
 }

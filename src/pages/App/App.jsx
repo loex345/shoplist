@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
 import NewListPage from '../NewListPage/NewListPage';
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
+import PrintListpage from '../PrintListPage/PrintListPage';
 import NavBar from '../../components/Navbar/NavBar';
 import './App.css';
 import LandingPage from '../LandingPage/LandingPage';
@@ -23,7 +23,7 @@ export default function App() {
             <Route path='/list/newItem' element={<NewItemPage />} />
             <Route path='/list/dashboard' element={<Dashboard user={user}/>} />
             <Route path='/list' element={<NewListPage />} />
-            <Route path='/list/newList' element={<OrderHistoryPage />} />
+            <Route path='/list/newList' element={<PrintListpage />} />
             <Route path='/*' element={<Navigate to='/list/dashboard'/>} />
           </Routes>
         </>

@@ -1,11 +1,11 @@
 import { checkToken } from '../../utilities/users-service';
 
-export default function OrderHistoryPage() {
+export default function PrintListPage() {
   
 
   return (
     <>
-      <h1>Add New List Page</h1>
+      <h1>Print List</h1>
     </>
   );
 }
