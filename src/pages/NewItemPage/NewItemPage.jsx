@@ -1,5 +1,5 @@
 import { useState } from "react";
-import * as groceriesAPI from '../../utilities/groceries-api';
+import * as shopitemsAPI from '../../utilities/shopitem-api';
 
 export default function NewItemPage () {
     const [newItem, setNewItem] = useState({
@@ -13,9 +13,15 @@ export default function NewItemPage () {
 async function handleAddNewItem(evt) {
         evt.preventDefault();
         const createItem = {...newItem}
-        const item = await groceriesAPI.addItem(createItem);
+        const item = await shopitemsAPI.newItem(createItem);
         //create addfuncton that goes to server
-        setNewItem(item);
+        setNewItem({
+            name: "",
+            category: "produce",
+            discription: "",
+            cost: 0,
+            qty: 0,
+        });
         console.log(item)
         
     }

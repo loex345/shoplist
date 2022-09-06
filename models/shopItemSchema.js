@@ -1,6 +1,6 @@
 const Schema = require('mongoose').Schema;
 
-const grocerySchema = new Schema ({
+const shopItemSchema = new Schema ({
     name: { type: String, required: true },
     category: { type: Schema.Types.ObjectId, ref:'Category'},
     discription: { type: String },
@@ -10,5 +10,5 @@ const grocerySchema = new Schema ({
     timestamps:true
 });
 
-module.exports = grocerySchema;
+module.exports = shopItemSchema;
 
