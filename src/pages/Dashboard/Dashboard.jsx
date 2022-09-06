@@ -12,11 +12,11 @@ export default function Dashboard({ user }){
     // create function that generates list of grocery items
  useEffect(function(){
      async function getItems(){
-         const shopitem = await shopitemsAPI.getAll();
+         const shopItem = await shopitemsAPI.getAll();
          const lists = await listsAPI.getAll();
-         setGroceryItems(shopItems);
+         setGroceryItems(shopItem);
          setLists(lists);
-         console.log(`i am here in getItems gitems ${shopitem}`);
+         console.log(`i am here in getItems gitems ${shopItem}`);
          console.log(`i am here in getItems Lists ${lists}`);
      }
         {

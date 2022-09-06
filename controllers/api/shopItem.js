@@ -1,4 +1,4 @@
-const ShopItem = require('../../models//shopItem');
+const ShopItem = require('../../models/shopItem');
 
 module.exports = {
     index,

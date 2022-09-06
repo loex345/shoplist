@@ -1,6 +1,6 @@
 const Schema = require('mongoose').Schema;
 const { default: mongoose } = require('mongoose');
-const grocerySchema = require('./grocerySchema')
+const shopItemSchema = require('./shopItemSchema')
 
 const projectSchema = new Schema({
     projectName: { type: String, default: 'none'},
@@ -12,7 +12,7 @@ const recipeSchema = new Schema ({
     user: { type: Schema.Types.ObjectId, ref: 'User' },
     name: { type: String, required: true},
     ingredients: { type: String, required: true},
-    groceryItems: grocerySchema,
+    item: [shopItemSchema],
     projectName: [projectSchema]
 }, {
  timestamps: true,

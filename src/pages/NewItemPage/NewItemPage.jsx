@@ -4,7 +4,7 @@ import * as shopitemsAPI from '../../utilities/shopitem-api';
 export default function NewItemPage () {
     const [newItem, setNewItem] = useState({
         name: "",
-        category: "produce",
+        category: "63178ae0d1d9b394b96fe304",
         discription: "",
         cost: 0,
         qty: 0,
@@ -17,7 +17,7 @@ async function handleAddNewItem(evt) {
         //create addfuncton that goes to server
         setNewItem({
             name: "",
-            category: "produce",
+            category: "63178ae0d1d9b394b96fe304",
             discription: "",
             cost: 0,
             qty: 0,
@@ -53,11 +53,11 @@ async function handleAddNewItem(evt) {
                     name="category"
                     value={newItem.category}
                     onChange={handleChange}>
-                    <option value="produce"> Produce</option>
-                    <option value="dryGood"> Dry Goods</option>
-                    <option value="pasta"> Pasta</option>
-                    <option value="condiments"> Condiments</option>
-                    <option value="generalmerchandise"> General Merchandise</option>
+                    <option value="63178ae0d1d9b394b96fe304"> Produce</option>
+                    <option value="63178ae0d1d9b394b96fe305"> Dry Goods</option>
+                    <option value="63178ae0d1d9b394b96fe306"> Pasta</option>
+                    <option value="63178ae0d1d9b394b96fe307"> Condiments</option>
+                    <option value="63178ae0d1d9b394b96fe308"> General Merchandise</option>
                 </select>
                 <label>Discription</label>
                 <textarea

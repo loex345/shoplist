@@ -1,7 +1,25 @@
-// require('dotenv').config();
-// require('./config/database');
+require('dotenv').config();
+require('./config/database');
 
-// const Grocery = require('./models/grocery');
+const Category = require('./models/category');
+const ShopItem = require('./models/shopItem');
 
-// await Grocery
+(async function() {
+
+    await Category.deleteMany({});
+    const categories = await Category.create([
+      {name: 'Produce', sortOrder: 10},
+      {name: 'Dry Goods', sortOrder: 20},
+      {name: 'Pasta', sortOrder: 30},
+      {name: 'Condiment', sortOrder: 40},
+      {name: 'General Merchandise', sortOrder: 50},
+    ]);
+    console.log(categories)
+
+    process.exit();
+  
+  })();
+    
+
+
 
