@@ -10,7 +10,7 @@ export default function NewItemPage () {
         qty: 0,
     });
 
-async function handleAddNewItem(evt) {
+    async function handleAddNewItem(evt) {
         evt.preventDefault();
         const createItem = {...newItem}
         const item = await shopitemsAPI.newItem(createItem);

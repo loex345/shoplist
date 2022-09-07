@@ -5,13 +5,14 @@ const shopItemSchema = require('./shopItemSchema')
 const projectSchema = new Schema({
     projectName: { type: String, default: 'none'},
     projectValue: { type: Number, default: 0.00}
-    // main need some vitrual properties
+    // may need some vitrual properties
 })
 
-const recipeSchema = new Schema ({
+const listSchema = new Schema ({
     user: { type: Schema.Types.ObjectId, ref: 'User' },
-    name: { type: String, required: true},
-    ingredients: { type: String, required: true},
+    category: { type: String, required: true},
+    recipename: { type: String },
+    listname: { type: String },
     item: [shopItemSchema],
     projectName: [projectSchema]
 }, {
@@ -19,4 +20,4 @@ const recipeSchema = new Schema ({
     
 })
 
-module.exports = mongoose.model('Recipe', recipeSchema);
+module.exports = mongoose.model('List', listSchema);

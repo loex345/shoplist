@@ -10,7 +10,7 @@ export default function Dashboard({ user }){
     const [shopItems, setGroceryItems] = useState('')
     const [lists, setLists] = useState('')
     // create function that generates list of grocery items
- useEffect(function(){
+ useEffect(function() { 
      async function getItems(){
          const shopItem = await shopitemsAPI.getAll();
          const lists = await listsAPI.getAll();
@@ -23,12 +23,12 @@ export default function Dashboard({ user }){
          getItems();
      }
     },[]);
-
+console.log(`${lists}`)
     return(
         <main>
         <h1>Welcome to Dashboard</h1>
         <GroceryList shopItems={shopItems} />
-        <RecipeList recipes={lists} />
+        <RecipeList lists={lists} />
         </main>
     );
 }
