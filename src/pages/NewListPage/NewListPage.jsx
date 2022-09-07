@@ -1,13 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import * as listsAPI from '../../utilities/list-api'
+import * as shopitemsAPI from '../../utilities//shopitem-api';
+import ShopItem from '../../components/ShopItem/ShopItem';
+import GroceryListItem from '../../components/GroceryListItem/GroceryListItem';
+import NewListPageItem from '../../components/NewListPageItem/NewListPageItem';
 
 export default function NewListPage() {
+  const [shopItems, setShopItems] = useState('')
 
   const [newList, setNewList] = useState({
     category: "",
     recipename: "", 
     listname: "", 
+    item:""
   })
+
+  
 
   function handleChange(evt){
     setNewList({
@@ -24,10 +32,27 @@ export default function NewListPage() {
     setNewList({
       category: "63178ae0d1d9b394b96fe304",
       recipename: "", 
-      listname: "", 
+      listname: "",
+      item:"", 
     })
   }
-
+  // render list of current items
+  useEffect(function() { 
+    async function getItems(){
+        const shopItem = await shopitemsAPI.getAll();      
+        setShopItems(shopItem);
+        console.log(`i am here in getItems gitems ${shopItem}`);
+    }
+       {
+        getItems();
+    }
+   },[]);
+   // map new items 
+   const itemList = Object.entries(shopItems).map((item, idx) => 
+       <NewListPageItem name={item} />
+       ); 
+    console.log(itemList)
+  // map out the id render that in a option list using a loop then provide that as item to be used
   return (
     <>
     <h1>New List Page</h1>
@@ -39,13 +64,14 @@ export default function NewListPage() {
       type="text"
       onChange={handleChange}
       />
-      <label>Add Items</label>
-      <input
-      name="item"
-      value={newList.item}
-      type="text"
+      <label> Items </label>
+      <select
+      name="item" 
       onChange={handleChange}
-      />
+      value={newList.item}
+      >
+      {itemList}
+      </select>
       <label>Category</label>
       <select
           name="category"

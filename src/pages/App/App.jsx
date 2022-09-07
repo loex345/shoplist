@@ -22,8 +22,8 @@ export default function App() {
             {/* Route components in here */}
             <Route path='/list/newItem' element={<NewItemPage />} />
             <Route path='/list/dashboard' element={<Dashboard user={user}/>} />
-            <Route path='/list' element={<NewListPage />} />
-            <Route path='/list/newList' element={<PrintListpage />} />
+            <Route path='/list' element={<PrintListpage />} />
+            <Route path='/list/newList' element={<NewListPage />} />
             <Route path='/*' element={<Navigate to='/list/dashboard'/>} />
           </Routes>
         </>

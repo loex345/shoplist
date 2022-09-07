@@ -1,19 +1,19 @@
-import '../../components/RecipeList/RecipeList.css'
-import RecipeItem from '../RecipeItem/RecipeItem';
+import '../../components/ShopList/ShopList.css'
+import ShopItem from '../ShopItem/ShopItem';
 
-export default function RecipeList ({ lists }) {
+export default function ShopList ({ lists }) {
     console.log(lists)
     if (typeof lists==='undefined') return;
     const listArr = Object.entries(lists)
     const listItem = listArr.map(( item, ) => 
-    <RecipeItem 
+    <ShopItem 
         key={item}
         name={item}
         />
         );
     console.log(listItem)
     return (
-        <div className="RecipeList">
+        <div className="ShopList">
         <h1> Recipes and Projects </h1>
         {listItem}
         </div>

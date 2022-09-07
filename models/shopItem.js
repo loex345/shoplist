@@ -3,4 +3,4 @@ require('./category');
 
 const shopItemSchema = require('./shopItemSchema');
 
-module.exports = mongoose.model('shopItem', shopItemSchema);
+module.exports = mongoose.model('ShopItem', shopItemSchema);

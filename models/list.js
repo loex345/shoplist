@@ -13,7 +13,7 @@ const listSchema = new Schema ({
     category: { type: String, required: true},
     recipename: { type: String },
     listname: { type: String },
-    item: [shopItemSchema],
+    item: [{ type: Schema.Types.ObjectId, ref: 'ShopItem' }], //to populate items
     projectName: [projectSchema]
 }, {
  timestamps: true,

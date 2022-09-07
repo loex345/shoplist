@@ -6,8 +6,8 @@ module.exports = {
 }
 
 async function index(req, res) {
-    const groceries = await ShopItem.find({});
-    res.json(groceries);
+    const shopItems = await ShopItem.find({});
+    res.json(shopItems);
 }
 
 async function createItem (req, res) {
