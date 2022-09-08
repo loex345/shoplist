@@ -1,9 +1,6 @@
-export default function NewListPageItem({ name }) {
-    console.log(name)
-    const newName = name.map(val => val.name)
-    const newId = name.map(val => val._id)
-    let newstr =newId[1].split().join().replace(',',"")
+export default function NewListPageItem({ item, updateCart }) {
+  
        return (
-            <option value={newstr}>{ newName }</option>
+            <button value={item._id} onClick={() => updateCart(item._id)}>{ item.name }</button>
       );
   }

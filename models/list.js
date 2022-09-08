@@ -10,10 +10,10 @@ const projectSchema = new Schema({
 
 const listSchema = new Schema ({
     user: { type: Schema.Types.ObjectId, ref: 'User' },
-    category: { type: String, required: true},
+    category: { type: String, },
     recipename: { type: String },
     listname: { type: String },
-    item: [{ type: Schema.Types.ObjectId, ref: 'ShopItem' }], //to populate items
+    items: [{ type: Schema.Types.ObjectId, ref: 'ShopItem' }], //to populate items
     projectName: [projectSchema]
 }, {
  timestamps: true,

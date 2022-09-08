@@ -2,13 +2,10 @@ import './GroceryList.css';
 import GroceryListItem from '../GroceryListItem/GroceryListItem';
 
 export default function GroceryList({ shopItems }){
-    console.log(shopItems)
-    const shopItemsArr = Object.entries(shopItems)
-    console.log(shopItemsArr)
-    const shopItem = shopItemsArr.map((item, idx) =>
+    const shopItem = shopItems.map((item, idx) =>
         <GroceryListItem 
-        key={item}
-        name={item}
+        key={item._id}
+        name={item.name}
         />
         );
     return (

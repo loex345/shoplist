@@ -14,5 +14,6 @@ async function createNewList (req, res) {
     console.log(req.body)
     const list = await List.create(req.body);
     list.user = req.user._id
+    list.save();
     res.json(list)
 }

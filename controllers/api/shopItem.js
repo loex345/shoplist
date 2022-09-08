@@ -13,7 +13,6 @@ async function index(req, res) {
 async function createItem (req, res) {
     console.log(req.body)
     const item = await ShopItem.create(req.body);
-    item.user = req.user._id
     res.json(item)
 
 }

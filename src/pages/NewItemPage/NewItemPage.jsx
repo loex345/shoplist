@@ -22,7 +22,6 @@ export default function NewItemPage () {
             cost: 0,
             qty: 0,
         });
-        console.log(item)
         
     }
 
