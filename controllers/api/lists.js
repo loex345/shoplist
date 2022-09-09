@@ -4,6 +4,7 @@ module.exports = {
     index,
     createNewList,
     show,
+    delete: deleteList
 }
 
 async function index (req, res) {
@@ -23,4 +24,14 @@ async function show (req, res) {
     const list =  await List.findById(req.params.id, function(err, list) {
         res.json(list)
     })
+}
+
+async function deleteList (req, res) {
+    const list = awaitList.findByIdAndDelete({_id: req.params.id, user: req.user.id}, function (err) {
+        if (!err) {
+            res.json(list)
+        } else {
+            throw err;
+        }
+    }).clone().catch(function(err){console.log(err)});
 }

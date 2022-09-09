@@ -9,6 +9,9 @@ export function getOneList(evt) {
     return sendRequest(`${BASE_URL}/list`);
 }
 
+export function deleteOneList(evt) {
+    return sendRequest(`${BASE_URL}/list`);
+}
 
 export function newList(createList) {
     return sendRequest(`${BASE_URL}/newList`, 'POST', createList)

@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 export default function ListsDetailPage ({ lists, getOneList, }) {
     const { id } = useParams();
+    console.log(id)
     return(
         <div>
             <h1> Hello</h1>
@@ -9,7 +10,8 @@ export default function ListsDetailPage ({ lists, getOneList, }) {
                 .map((list) => (
                 <div key={list.id}>
                 <h2>Title: {list.listname}</h2>
-                <h2>Items: {list.items}</h2>
+                <p>Items: {list.items}</p>  
+                {/* //use populate to get the name properties */}
                 </div>
                 ))}
             </div>
