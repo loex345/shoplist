@@ -44,9 +44,9 @@ useEffect(function() {
           <Routes>
             {/* Route components in here */}
             <Route path='/list/newItem' element={<NewItemPage />} />
-            <Route path='/list/dashboard' element={<Dashboard user={user} shopItems={shopItems} lists={lists}/>} />
+            <Route path='/list/dashboard' element={<Dashboard user={user} shopItems={shopItems} lists={lists} setLists={setLists}/>} />
             <Route path='/list' element={<PrintListpage />} />
-            <Route path='/list/newList' element={<NewListPage shopItems={shopItems} />} />
+            <Route path='/list/newList' element={<NewListPage shopItems={shopItems} lists={lists} setLists={setLists} />} />
             <Route path='/list/:id' element={<ListsDetailPage lists={lists} setLists={setLists}/>} />
             <Route path='/*' element={<Navigate to='/list/dashboard'/>} />
           </Routes>

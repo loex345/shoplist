@@ -1,20 +1,19 @@
 import { useParams } from "react-router-dom";
+import DisplayItemDetails from "../../components/DisplayItemDetails/DisplayItemDetails";
+
 export default function ListsDetailPage ({ lists, getOneList, }) {
     const { id } = useParams();
-    console.log(id)
-    return(
+    const list = lists.filter((list) => list._id === id)
+    console.log(list)
+    const items = list[0].items.map((item => <DisplayItemDetails key={item._id} item={item}/>))
+    return (
         <div>
             <h1> Hello</h1>
             <div>
-                {lists.filter((list) => list._id === id)
-                .map((list) => (
-                <div key={list.id}>
                 <h2>Title: {list.listname}</h2>
-                <p>Items: {list.items}</p>  
-                {/* //use populate to get the name properties */}
-                </div>
-                ))}
+                <p>Items: </p>
+                {items}  
             </div>
         </div>
-    );
+    )
 }

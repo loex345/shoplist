@@ -5,12 +5,8 @@ export function getAll() {
     return sendRequest(BASE_URL);
 }
 
-export function getOneList(evt) {
-    return sendRequest(`${BASE_URL}/list`);
-}
-
-export function deleteOneList(evt) {
-    return sendRequest(`${BASE_URL}/list`);
+export function deleteOneList(id) {
+    return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }
 
 export function newList(createList) {

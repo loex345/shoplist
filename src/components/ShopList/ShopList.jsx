@@ -6,17 +6,11 @@ import * as listsAPI from '../../utilities/list-api';
 
 export default function ShopList ({ lists, setLists }) {
     const { id } = useParams();
-    console.log(lists)
-    const [newList, setNewList] = useState(lists);
-    const [deletedList, setDeletedList] = useState('');
+    const [newList, setNewList] = useState(...lists);
     
     async function handleRemove(id) {
-        console.log(id)
-        const deletedlist = await listsAPI.deleteOneList(id);
-        const newList = lists.filter((item)=> item.id !== id);
-        // console.log(newList)
-        setNewList(newList)
-        setDeletedList(deletedList)
+       let allLists = await listsAPI.deleteOneList(id);
+        setLists(allLists)
     }
 
     const listItem = lists.map(( item, ) => 

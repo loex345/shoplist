@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import * as listsAPI from '../../utilities/list-api'
 import NewListPageItem from '../../components/NewListPageItem/NewListPageItem';
 
-export default function NewListPage( {shopItems} ) {
+export default function NewListPage( {shopItems, lists, setLists} ) {
 
   useEffect(function() { 
     function setItems() {
@@ -57,7 +57,8 @@ export default function NewListPage( {shopItems} ) {
     newList.items = selectedOptions
     const createList = {...newList}
     console.log(createList)
-    const list = await listsAPI.newList(createList);
+    const allLists = await listsAPI.newList(createList);
+    setLists(allLists)
     setNewList({
       listname: "",
       items:[]
