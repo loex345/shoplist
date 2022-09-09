@@ -1,5 +1,5 @@
-export default function ShopItem({ name }) {
+export default function ShopItem({ name , idx }) {
        return (
-            <p>{ name }</p>
+            <p value={idx}>{ name }  </p>
       );
   }

@@ -11,23 +11,30 @@ import Dashboard from '../Dashboard/Dashboard';
 import NewItemPage from '../NewItemPage/NewItemPage';
 import * as shopitemsAPI from '../../utilities//shopitem-api';
 import * as listsAPI from '../../utilities/list-api';
+import ListsDetailPage from '../ListsDetailPage/ListsDetailPage'
 
 export default function App() {
  const [user, setUser] = useState(getUser());
  const [shopItems, setShopItems] = useState([])
  const [lists, setLists] = useState([])
+ const [oneList, setOneList] = useState('')
 
 useEffect(function() { 
-  async function getItems(){
+  async function getItems() {
       const shopItem = await shopitemsAPI.getAll();
       const lists = await listsAPI.getAll();
       setShopItems(shopItem);
       setLists(lists);
   }
-     {
-      getItems();
-  }
+  getItems();
+
  },[]);
+
+async function getOneList(evt) {
+  const list = await listsAPI.getOneList(evt)
+  setOneList(list)
+}
+console.log(oneList)
   return (
     <main className="App">
       { user ?
@@ -39,6 +46,7 @@ useEffect(function() {
             <Route path='/list/dashboard' element={<Dashboard user={user} shopItems={shopItems} lists={lists}/>} />
             <Route path='/list' element={<PrintListpage />} />
             <Route path='/list/newList' element={<NewListPage shopItems={shopItems} />} />
+            <Route path='/list/:id' element={<ListsDetailPage lists={lists} getOneList={getOneList}/>} />
             <Route path='/*' element={<Navigate to='/list/dashboard'/>} />
           </Routes>
         </>

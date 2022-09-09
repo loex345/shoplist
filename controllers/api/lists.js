@@ -3,6 +3,7 @@ const List = require('../../models/list')
 module.exports = {
     index,
     createNewList,
+    show,
 }
 
 async function index (req, res) {
@@ -16,4 +17,10 @@ async function createNewList (req, res) {
     list.user = req.user._id
     list.save();
     res.json(list)
+}
+
+async function show (req, res) {
+    const list =  await List.findById(req.params.id, function(err, list) {
+        res.json(list)
+    })
 }
