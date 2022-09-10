@@ -12,6 +12,8 @@ import NewItemPage from '../NewItemPage/NewItemPage';
 import * as shopitemsAPI from '../../utilities//shopitem-api';
 import * as listsAPI from '../../utilities/list-api';
 import ListsDetailPage from '../ListsDetailPage/ListsDetailPage'
+import ListUpdatePage from '../ListUpdatePage/ListUpdatePage';
+import ListUpdate from '../../components/ListUpdate/ListUpdate';
 
 export default function App() {
  const [user, setUser] = useState(getUser());
@@ -47,7 +49,8 @@ useEffect(function() {
             <Route path='/list/dashboard' element={<Dashboard user={user} shopItems={shopItems} lists={lists} setLists={setLists}/>} />
             <Route path='/list' element={<PrintListpage />} />
             <Route path='/list/newList' element={<NewListPage shopItems={shopItems} lists={lists} setLists={setLists} />} />
-            <Route path='/list/:id' element={<ListsDetailPage lists={lists} setLists={setLists}/>} />
+            <Route path='/list/:id' element={<ListUpdatePage lists={lists} setLists={setLists}/>} />
+            {/* <Route path='/list/edit/:id' element={<ListUpdatePage lists={lists} setLists={setLists}/>} /> */}
             <Route path='/*' element={<Navigate to='/list/dashboard'/>} />
           </Routes>
         </>
