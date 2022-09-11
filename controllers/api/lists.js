@@ -3,7 +3,8 @@ const List = require('../../models/list')
 module.exports = {
     index,
     createNewList,
-    delete: deleteList
+    delete: deleteList,
+    edit
 }
 
 async function index (req, res) {
@@ -31,3 +32,15 @@ async function deleteList (req, res) {
     const lists = await List.find({}).populate('items').exec();
     res.json(lists);
     }
+
+async function edit (req, res) {
+    console.log('i am here')
+    try {
+      await List.findOneAndUpdate({_id: req.params.id, user: req.user._id }, 
+        req.body, 
+        {new: true}).exec();
+        res.json(edit)
+    } catch (err) {
+        res.status(400).json(err,"Something is not right here")
+    }
+}

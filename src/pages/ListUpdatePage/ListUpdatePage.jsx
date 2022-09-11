@@ -10,7 +10,7 @@ export default function ListUpdatePage ({ lists}) {
 
         { showEdit ?
             <>
-            <ListUpdate />
+            <ListUpdate lists={lists}/>
         <button type="button" onClick={() => setShowEdit(!showEdit)}>
             Show Details
         </button>

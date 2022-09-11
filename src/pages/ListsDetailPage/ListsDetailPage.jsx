@@ -10,33 +10,14 @@ export default function ListsDetailPage ({ lists, getOneList, }) {
     console.log(list)
     const items = list[0].items.map((item => <DisplayItemDetails key={item._id} item={item}/>))
     
-    function toEdit() {
-        console.log('Edit')
-
-    }
     return (
         <div>
-            <h1> Hello</h1>
+            <h1> </h1>
             <div>
-                <h2>Title: {list.listname}</h2>
+                <h2>Title: {list[0].listname}</h2>
                 <p>Items: </p>
                  {items}  
             </div>
-             {/* { showEdit ?
-            <>
-            <button onClick={() => setShowEdit(!showEdit)}>
-                Update Details
-                </button>
-                    <ListsDetailPage />
-                </>
-                :
-                <>
-                    <ListUpdate />
-                <button onClick={() => setShowEdit(!showEdit)}>
-                Show Details
-                </button>
-            </>
-        } */}
         </div>
     )
 }
