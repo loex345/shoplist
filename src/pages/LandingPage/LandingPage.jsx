@@ -6,8 +6,7 @@ export default function LandingPage({ setUser }) {
     const [showAuth, setShowAuth] = useState(false);
 
     return (
-        <main className="LandingPage"> 
-         <aside>
+        <main className="landside">          
             <div>
 
         { showAuth ?
@@ -15,12 +14,11 @@ export default function LandingPage({ setUser }) {
             :
             <h1>Welcome to Shop List</h1> 
         }
-        <button onClick={() => setShowAuth(!showAuth)} className="btn btn-primary">
+            <button onClick={() => setShowAuth(!showAuth)} className="btn btn-primary">
           {showAuth ? '': 'Click Here to Sign Up'}  
-        </button>
+            </button>
         {/* // render no button when page button click */}
           </div>
-         </aside>
         </main>
     );
 }
