@@ -6,9 +6,10 @@ export default function LandingPage({ setUser }) {
     const [showAuth, setShowAuth] = useState(false);
 
     return (
-        <main className="landside">          
-            <div>
-
+    <div>
+        {/* <img className="landimg" src="https://i.imgur.com/VLpszma.jpg"/> */}
+            <main>          
+                <div className="landside">
         { showAuth ?
             <AuthPage setUser={setUser}/>
             :
@@ -20,5 +21,6 @@ export default function LandingPage({ setUser }) {
         {/* // render no button when page button click */}
           </div>
         </main>
+    </div>    
     );
 }

@@ -12,9 +12,7 @@ export default function ShopList ({ lists, setLists, user }) {
        let allLists = await listsAPI.deleteOneList(id);
         setLists(allLists)
     }
-
-
-    {/* { item.user ? */}
+    console.log(lists)
     const listItem = lists.map(( item, ) => 
    <>
     <ShopItem 
@@ -23,11 +21,16 @@ export default function ShopList ({ lists, setLists, user }) {
         />
         <Link to={`/list/${item._id}`}>
         {item.listname}
-        </Link>
+        </Link> 
+        {user._id === item.user._id ? 
+    
         <button type="button" onClick={() => handleRemove(item._id)}>Delete</button> 
+        : 
+        ''
+        } 
      </>
         );
-        {/* } */}
+     
    
     return (
         <div className="ShopList">
