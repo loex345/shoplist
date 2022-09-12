@@ -9,7 +9,6 @@ export default function ListsDetailPage ({ lists, getOneList, }) {
     const list = lists.filter((list) => list._id === id)
     console.log(list)
     const items = list[0].items.map((item => <DisplayItemDetails key={item._id} item={item}/>))
-    
     return (
         <div>
             <h1> </h1>

@@ -8,7 +8,7 @@ module.exports = {
 }
 
 async function index (req, res) {
-    const lists = await List.find({}).populate('items').exec();
+    const lists = await List.find({}).populate('items').populate('user').exec();
     res.json(lists);
 }
 
@@ -17,7 +17,7 @@ async function createNewList (req, res) {
     const list = await List.create(req.body);
     list.user = req.user._id
     list.save();
-    const lists = await List.find({}).populate('items').exec();
+    const lists = await List.find({}).populate('items').populate('user').exec();
     res.json(lists)
 }
 
@@ -29,17 +29,17 @@ async function createNewList (req, res) {
 
 async function deleteList (req, res) {
     await List.findOneAndDelete({_id: req.params.id, user: req.user._id})
-    const lists = await List.find({}).populate('items').exec();
+    const lists = await List.find({}).populate('items').populate('user').exec();
     res.json(lists);
     }
 
 async function edit (req, res) {
-    console.log('i am here')
     try {
       await List.findOneAndUpdate({_id: req.params.id, user: req.user._id }, 
         req.body, 
         {new: true}).exec();
-        res.json(edit)
+        const lists = await List.find({}).populate('items').populate('user').exec();
+        res.json(lists)
     } catch (err) {
         res.status(400).json(err,"Something is not right here")
     }

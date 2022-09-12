@@ -1,7 +1,7 @@
 import { useState } from "react";
 import * as shopitemsAPI from '../../utilities/shopitem-api';
 
-export default function NewItemPage () {
+export default function NewItemPage ({setLists}) {
     const [newItem, setNewItem] = useState({
         name: "",
         category: "63178ae0d1d9b394b96fe304",

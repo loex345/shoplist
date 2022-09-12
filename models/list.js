@@ -2,9 +2,10 @@ const Schema = require('mongoose').Schema;
 const { default: mongoose } = require('mongoose');
 const shopItemSchema = require('./shopItemSchema')
 
-const projectSchema = new Schema({
-    projectName: { type: String, default: 'none'},
-    projectValue: { type: Number, default: 0.00}
+const commentSchema = new Schema({
+    content: { type: String, default: 'none'},
+    budgetamt: { type: Number, default: 0.00},
+    user: { type: Schema.Types.ObjectId, ref:'User'}
     // may need some vitrual properties
 })
 
@@ -14,7 +15,7 @@ const listSchema = new Schema ({
     recipename: { type: String },
     listname: { type: String },
     items: [{ type: Schema.Types.ObjectId, ref: 'ShopItem' }], //to populate items
-    projectName: [projectSchema]
+    comments: [commentSchema]
 }, {
  timestamps: true,
     

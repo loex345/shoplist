@@ -33,11 +33,7 @@ useEffect(function() {
 
  },[]);
 
-// async function getOneList(evt) {
-//   const list = await listsAPI.getOneList(evt)
-//   setOneList(list)
-// }
-// console.log(oneList)
+
   return (
     <main className="App">
       { user ?
@@ -45,12 +41,11 @@ useEffect(function() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path='/list/newItem' element={<NewItemPage />} />
+            <Route path='/list/newItem' element={<NewItemPage setLists={setLists}/>} />
             <Route path='/list/dashboard' element={<Dashboard user={user} shopItems={shopItems} lists={lists} setLists={setLists}/>} />
             <Route path='/list' element={<PrintListpage />} />
             <Route path='/list/newList' element={<NewListPage shopItems={shopItems} lists={lists} setLists={setLists} />} />
-            <Route path='/list/:id' element={<ListUpdatePage lists={lists} setLists={setLists}/>} />
-            {/* <Route path='/list/edit/:id' element={<ListUpdatePage lists={lists} setLists={setLists}/>} /> */}
+            <Route path='/list/:id' element={<ListUpdatePage lists={lists} setLists={setLists} shopItems={shopItems}/>} />
             <Route path='/*' element={<Navigate to='/list/dashboard'/>} />
           </Routes>
         </>
