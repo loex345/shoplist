@@ -12,10 +12,12 @@ export default function ListsDetailPage ({ lists, getOneList, }) {
     const { id } = useParams();
     const list = lists.filter((list) => list._id === id)
     const items = list[0].items.map((item => <DisplayItemDetails key={item._id} item={item}/>))
-
-    async function handleAddCommentItem(evt, id) {
+    
+    async function handleAddCommentItem(evt) {
         evt.preventDefault();
+        let id=list[0]._id
         const createComment = {...addComment}
+        console.log(createComment, id)
         const comment = await commentAPI.newComment(createComment, id);
         setAddComment({
             content: "",

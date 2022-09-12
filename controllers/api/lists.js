@@ -20,11 +20,6 @@ async function createNewList (req, res) {
     res.json(lists)
 }
 
-// async function show (req, res) {
-//     const list =  await List.findById(req.params.id, function(err, list) {
-//         res.json(list)
-//     })
-// }
 
 async function deleteList (req, res) {
     await List.findOneAndDelete({_id: req.params.id, user: req.user._id})
