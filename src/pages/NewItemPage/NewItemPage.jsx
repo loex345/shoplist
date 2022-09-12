@@ -14,7 +14,6 @@ export default function NewItemPage ({setLists}) {
         evt.preventDefault();
         const createItem = {...newItem}
         const item = await shopitemsAPI.newItem(createItem);
-        //create addfuncton that goes to server
         setNewItem({
             name: "",
             category: "63178ae0d1d9b394b96fe304",
