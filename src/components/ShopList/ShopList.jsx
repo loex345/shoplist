@@ -19,12 +19,14 @@ export default function ShopList ({ lists, setLists, user }) {
         key={item._id}
         idx={item._id}
         />
+        <button className="btn btn-light">
         <Link to={`/list/${item._id}`}>
-        {item.listname}
+         View {item.listname}
         </Link> 
+        </button>
         {user._id === item.user._id ? 
     
-        <button type="button" className="btn btn-primary" onClick={() => handleRemove(item._id)}>Delete</button> 
+        <button type="button" className="btn btn-primary btn-sm" onClick={() => handleRemove(item._id)}>Delete {item.listname}</button> 
         : 
         ''
         } 
@@ -33,12 +35,12 @@ export default function ShopList ({ lists, setLists, user }) {
      
    
     return (
-        <div className="ShopList">
-        <h1> Recipes and Projects </h1>
-        
-        {listItem}
-        
-        </div>
+        <>
+        <h1 id="ShoplistTitle"> Lists </h1>
+            <div className="ShopList">
+                {listItem}
+            </div>
+        </>
 
     );
 }

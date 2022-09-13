@@ -74,7 +74,6 @@ export default function ListUpdate ( {shopItems ,lists, setLists} ) {
         evt.preventDefault();
         listUpdate.items = selectedOptions
         let list = await listsAPI.edit(id, listUpdate)
-        console.log(listUpdate)
         setLists(list)
         navigate(-1)
       } catch (e) {
@@ -102,12 +101,12 @@ return (
         <label>List name</label>
         <input type='text' name="listname" value={listUpdate.listname} onChange={handleChange} />
         <label>Items</label>
-        {cartList}
+        <div className="ListUpdate">
+          {cartList}
+        </div>
         <h1>HelloWorld</h1>
         <h1>HelloWorld</h1>
         <h1>HelloWorld</h1>
-        {/* <input type='text' name="items" value={listUpdate.items} onChange={handleChange} />
-        <label>Items</label> */}
         <button>Submit Updates</button>
     </form>
     {itemList}

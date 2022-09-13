@@ -1,0 +1,11 @@
+.ListsDetailPage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px
+}
+
+.ListsDetailPage form {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+}

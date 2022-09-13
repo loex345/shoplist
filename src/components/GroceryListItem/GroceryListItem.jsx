@@ -1,5 +1,5 @@
 export default function GroceryListItem({ name }) {
      return (
-          <p>{ name }</p>
+          <button className="btn btn-primary">{ name }</button>
     );
 }

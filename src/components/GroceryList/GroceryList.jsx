@@ -15,9 +15,11 @@ export default function GroceryList({ shopItems }){
     </>
         );
     return (
-        <div className='GroceryList'>
+        <>
             <h1>List of items</h1>
-            {shopItem}
-        </div>
+                <div className="GroceryList">
+                    {shopItem}
+            </div>
+        </>
     );
 }

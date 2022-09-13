@@ -34,3 +34,7 @@ body {
   color:whitesmoke;
 }
 
+form {
+  display: inherit;
+  align-items: center;
+}

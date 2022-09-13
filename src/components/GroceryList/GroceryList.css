@@ -1,3 +1,8 @@
 .GroceryList {
     border-style: groove;
+    display: grid;
+    grid-template-columns: 1Fr 1Fr 1Fr;
+    grid-template-rows: 1Fr 1Fr 1Fr;
+    justify-items: center;
+    align-items: end;
 }

@@ -3,9 +3,9 @@ import { useState } from 'react';
 import DisplayItemDetails from "../../components/DisplayItemDetails/DisplayItemDetails";
 import * as commentAPI from "../../utilities/comment-api";
 import DisplayComments from "../../components/DisplayComments/DisplayComments";
+import "../ListsDetailPage/ListsDetailPage.css"
 
-
-export default function ListsDetailPage ({ lists, getOneList, setLists }) {
+export default function ListsDetailPage ({ lists, setLists }) {
     const [addComment, setAddComment] = useState({
         content:"",
         budgetamt:0,
@@ -36,23 +36,26 @@ export default function ListsDetailPage ({ lists, getOneList, setLists }) {
     }
 
     return (
-        <div>
-            <h1> Lists Detail </h1>
+        <>
+        <h1> Lists Detail </h1>
             <div>
                 <h2>Title: {list[0].listname}</h2>
-                <p>Items: </p>
+                <h3>Items to Purchase: </h3>
+            <div className="ListsDetailPage">
                  {items}  
             </div>
-                {comments}
-            <h2> New Comment </h2>
-            <form onSubmit={handleAddCommentItem}>
-                {/* content budgetamt user */}
-                <label> Content Area</label>
-                <textarea name="content" value={addComment.content} onChange={handleChange}></textarea>
-                <label> Budget Amt</label>
-                <input name="budgetamt" value={addComment.budgetamt} onChange={handleChange}/>
-                <button type="submit"> Add comment</button>
-            </form>
+            <h3> Comments
+            {comments}
+            </h3>
         </div>
+            <h2> New Comment </h2>
+            <form onSubmit={handleAddCommentItem} className="ListsDetailPage">
+                {/* content budgetamt user */}
+                <button type="submit"> Add comment</button>
+                <textarea name="content" value={addComment.content} onChange={handleChange}>Comment Box</textarea>
+                {/* <label> Budget Amt</label> */}
+                {/* <input name="budgetamt" value={addComment.budgetamt} onChange={handleChange}/> */}
+        </form>
+        </>
     )
 }

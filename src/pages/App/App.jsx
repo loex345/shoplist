@@ -27,7 +27,7 @@ useEffect(function() {
   }
   getItems();
 
- },[]);
+ },[user]);
 
 
   return (

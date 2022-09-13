@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom"
 import * as listsAPI from '../../utilities/list-api'
 import NewListPageItem from '../../components/NewListPageItem/NewListPageItem';
 
@@ -51,14 +52,15 @@ export default function NewListPage( {shopItems, lists, setLists} ) {
     setNewList({...newList,[evt.target.name]: evt.target.value });
   }
 
+  const navigate = useNavigate();
 
   async function handleAddNewList(evt) {
     evt.preventDefault();
     newList.items = selectedOptions
     const createList = {...newList}
-    console.log(createList)
     const allLists = await listsAPI.newList(createList);
     setLists(allLists)
+    navigate('/dashboard')
     setNewList({
       listname: "",
       items:[]
@@ -82,6 +84,7 @@ export default function NewListPage( {shopItems, lists, setLists} ) {
       value={newList.listname}
       type="text"
       onChange={handleChange}
+      required
       />
       <label> Items </label>
         {cartList}
