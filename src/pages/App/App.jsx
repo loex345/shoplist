@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
-import AuthPage from '../AuthPage/AuthPage';
 import NewListPage from '../NewListPage/NewListPage';
 import PrintListpage from '../PrintListPage/PrintListPage';
 import NavBar from '../../components/Navbar/NavBar';
