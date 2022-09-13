@@ -7,20 +7,18 @@ export default function LandingPage({ setUser }) {
 
     return (
     <div>
-        {/* <img className="landimg" src="https://i.imgur.com/VLpszma.jpg"/> */}
-            <main>          
-                <div className="landside">
+        <div id="landingpage" className="d-flex justify-content-center">
+            <h1> Welcome to Shop List</h1>         
         { showAuth ?
             <AuthPage setUser={setUser}/>
             :
-            <h1>Welcome to Shop List</h1> 
+            ''
         }
             <button onClick={() => setShowAuth(!showAuth)} className="btn btn-primary">
           {showAuth ? '': 'Click Here to Sign Up'}  
             </button>
         {/* // render no button when page button click */}
           </div>
-        </main>
     </div>    
     );
 }

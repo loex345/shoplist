@@ -1,6 +1,7 @@
 body {
-  margin: 0;
-  
+  height: 100%;
+  width: 100%;
+  display: flex;
 }
 
 code {
@@ -26,7 +27,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
-  /* background-image: url("https://i.imgur.com/VLpszma.jpg"); */
   background-size: cover;
   background-repeat: no-repeat;
   padding: 2vmin;

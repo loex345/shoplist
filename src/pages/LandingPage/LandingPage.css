@@ -1,9 +1,12 @@
-.landingPage{
+.landingPage {  
+    margin: auto;
     background-color: grey;
     column-span: all;
+    width: 10rem;
+    height: 30rem;
 }
 
-.landPage aside {
+.landingpPage {
     width: 40%;
     padding-right: .5rem;
     margin-right: .5rem;
@@ -13,9 +16,14 @@
     color: #29627e;
 }
 .landside {
-    margin-top: 22rem;
-    margin-left: 12rem;
+    column-span: all;
+    margin-right: auto;
     background-color: grey;
     border-radius: 5%;
 }
-
+ 
+#landingpage {
+    margin-left: 45rem;
+    margin-top: 25rem;
+    padding: .5rem;
+}

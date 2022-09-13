@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState } from 'react';
 import DisplayItemDetails from "../../components/DisplayItemDetails/DisplayItemDetails";
 import * as commentAPI from "../../utilities/comment-api";
@@ -18,7 +18,7 @@ export default function ListsDetailPage ({ lists, getOneList, }) {
         let id=list[0]._id
         const createComment = {...addComment}
         console.log(createComment, id)
-        const comment = await commentAPI.newComment(createComment, id);
+        await commentAPI.newComment(createComment, id);
         setAddComment({
             content: "",
             budgetamt: 0,

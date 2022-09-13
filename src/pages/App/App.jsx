@@ -11,16 +11,13 @@ import Dashboard from '../Dashboard/Dashboard';
 import NewItemPage from '../NewItemPage/NewItemPage';
 import * as shopitemsAPI from '../../utilities//shopitem-api';
 import * as listsAPI from '../../utilities/list-api';
-import ListsDetailPage from '../ListsDetailPage/ListsDetailPage'
 import ListUpdatePage from '../ListUpdatePage/ListUpdatePage';
-import ListUpdate from '../../components/ListUpdate/ListUpdate';
+
 
 export default function App() {
  const [user, setUser] = useState(getUser());
  const [shopItems, setShopItems] = useState([])
  const [lists, setLists] = useState([])
-//  const [oneList, setOneList] = useState('')
-const [deleteOne, getDeleteOne] = useState([])
 
 useEffect(function() { 
   async function getItems() {
