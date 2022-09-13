@@ -2,9 +2,10 @@ import { useParams } from "react-router-dom";
 import { useState } from 'react';
 import DisplayItemDetails from "../../components/DisplayItemDetails/DisplayItemDetails";
 import * as commentAPI from "../../utilities/comment-api";
+import DisplayComments from "../../components/DisplayComments/DisplayComments";
 
 
-export default function ListsDetailPage ({ lists, getOneList, }) {
+export default function ListsDetailPage ({ lists, getOneList, setLists }) {
     const [addComment, setAddComment] = useState({
         content:"",
         budgetamt:0,
@@ -12,13 +13,14 @@ export default function ListsDetailPage ({ lists, getOneList, }) {
     const { id } = useParams();
     const list = lists.filter((list) => list._id === id)
     const items = list[0].items.map((item => <DisplayItemDetails key={item._id} item={item}/>))
-    
+    const comments = list[0].comments.map((val, idx) => <DisplayComments key={val[idx]} comment={val}/>)
+
     async function handleAddCommentItem(evt) {
         evt.preventDefault();
         let id=list[0]._id
         const createComment = {...addComment}
-        console.log(createComment, id)
-        await commentAPI.newComment(createComment, id);
+        const comment = await commentAPI.newComment(createComment, id);
+        setLists(comment)
         setAddComment({
             content: "",
             budgetamt: 0,
@@ -41,6 +43,7 @@ export default function ListsDetailPage ({ lists, getOneList, }) {
                 <p>Items: </p>
                  {items}  
             </div>
+                {comments}
             <h2> New Comment </h2>
             <form onSubmit={handleAddCommentItem}>
                 {/* content budgetamt user */}

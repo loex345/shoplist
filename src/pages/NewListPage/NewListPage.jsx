@@ -24,7 +24,7 @@ export default function NewListPage( {shopItems, lists, setLists} ) {
     let newItem = notSelectedOptions.filter(function(item) {
       if (item._id === id) return item
     })
-    console.log(newItem)
+
     setSelectedOptions([...selectedOptions, newItem[0]])
 
     let newOptions = notSelectedOptions.map(item => item)

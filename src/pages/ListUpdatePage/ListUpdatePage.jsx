@@ -17,7 +17,7 @@ export default function ListUpdatePage ({ shopItems, lists, setLists}) {
             </>
             :
             <>
-            <ListsDetailPage lists={lists} />
+            <ListsDetailPage lists={lists} setLists={setLists} />
             <button type="button" onClick={() => setShowEdit(!showEdit)}>
             Update Details
             </button>
