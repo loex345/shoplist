@@ -87,10 +87,10 @@ export default function NewListPage( {shopItems, lists, setLists} ) {
       onChange={handleChange}
       required
       />
-       <h1>
+      <h1>
        My Items 
-        </h1>
-       <div id="cart">
+      </h1>
+      <div id="cart">
         {cartList}
       </div>
       <button type="submit" className="btn btn-light">Submit List</button>
