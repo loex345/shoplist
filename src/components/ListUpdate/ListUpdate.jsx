@@ -96,18 +96,20 @@ export default function ListUpdate ( {shopItems ,lists, setLists} ) {
 
 return (
   <>
-    <h1>Hello Edit page</h1>
+    <h1>Edit page</h1>
     <form onSubmit={handleOnSubmit}>
-        <label>List name</label>
+        <h2>List name</h2>
         <input type='text' name="listname" value={listUpdate.listname} onChange={handleChange} />
-        <label>Items</label>
+        <h3>Items in List</h3>
         <div className="ListUpdate">
           {cartList}
         </div>
         <hr/>
         <button>Submit Updates</button>
     </form>
+    <br/>
     <div className="ListUpdate">
+    <h3>Items available</h3>
     {itemList}
     </div>
     </>

@@ -48,7 +48,7 @@ export default function ListsDetailPage ({ lists, setLists, user }) {
 
     return (
         <>
-        <h1> Lists Detail </h1>
+        <h1> List Detail </h1>
         <div>
             <h2>Title: {list[0].listname}</h2>
                 <h3>Items to Purchase: </h3>
