@@ -104,12 +104,12 @@ return (
         <div className="ListUpdate">
           {cartList}
         </div>
-        <h1>HelloWorld</h1>
-        <h1>HelloWorld</h1>
-        <h1>HelloWorld</h1>
+        <hr/>
         <button>Submit Updates</button>
     </form>
+    <div className="ListUpdate">
     {itemList}
+    </div>
     </>
     )
 }
