@@ -4,7 +4,7 @@
 </div>
 
 ## Discription
-ShopList is a basic shopping list app that helps you organize your shopping lists that are use on a regular basis.
+ShopList is a basic shopping list app that helps you organize your shopping lists that are used on a regular basis.
 
 <hr>
 <h2> Screenshots </h2>
@@ -39,7 +39,7 @@ ShopList is a basic shopping list app that helps you organize your shopping list
 <h3><a href="https://shoplist-621.herokuapp.com/" target="_blank">Click Here For App</a></h3>
 
 ### Instructions
-1. Log on to app or sign up for new user name
+1. Log on to app or sign up for new user credentials
 2. Navgate to Add New List
 3. Enter name of List click items into list
 4. If need be enter new custom item to be added to the list
