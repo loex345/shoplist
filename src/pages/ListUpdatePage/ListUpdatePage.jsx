@@ -3,7 +3,7 @@ import ListsDetailPage from "../ListsDetailPage/ListsDetailPage";
 import ListUpdate from "../../components/ListUpdate/ListUpdate";
 import { useParams } from 'react-router-dom';
 
-export default function ListUpdatePage ({ shopItems, lists, setLists}) {
+export default function ListUpdatePage ({ shopItems, lists, setLists, user}) {
     const [showEdit, setShowEdit] = useState(false);
     return (
         <div>
@@ -11,14 +11,14 @@ export default function ListUpdatePage ({ shopItems, lists, setLists}) {
         { showEdit ?
             <>
             <ListUpdate lists={lists} setLists={setLists} shopItems={shopItems}/>
-        <button type="button" onClick={() => setShowEdit(!showEdit)}>
+        <button type="button" className="btn btn-light m-1" onClick={() => setShowEdit(!showEdit)}>
             Show Details
         </button>
             </>
             :
             <>
-            <ListsDetailPage lists={lists} setLists={setLists} />
-            <button type="button" onClick={() => setShowEdit(!showEdit)}>
+            <ListsDetailPage lists={lists} setLists={setLists} user={user}/>
+            <button type="button" className="btn btn-light m-1" onClick={() => setShowEdit(!showEdit)}>
             Update Details
             </button>
             </>

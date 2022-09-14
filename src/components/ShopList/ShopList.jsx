@@ -24,12 +24,12 @@ export default function ShopList ({ lists, setLists, user }) {
          View {item.listname}
         </Link> 
         </button>
-        {user._id === item.user._id ? 
+        {/* {user._id === item.user._id ? 
     
         <button type="button" className="btn btn-primary btn-sm" onClick={() => handleRemove(item._id)}>Delete {item.listname}</button> 
         : 
         ''
-        } 
+        }  */}
      </>
         );
      

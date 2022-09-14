@@ -9,3 +9,8 @@
     align-items: center;
     flex-direction: column-reverse;
 }
+
+#itemsColor {
+    background-color:rgb(164, 163, 163);
+    border-radius: 5%
+}

@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"
 import * as shopitemsAPI from '../../utilities/shopitem-api';
 
-export default function NewItemPage ({setLists}) {
+export default function NewItemPage ({setShopItems}) {
     const [newItem, setNewItem] = useState({
         name: "",
         category: "63178ae0d1d9b394b96fe304",
@@ -10,10 +11,14 @@ export default function NewItemPage ({setLists}) {
         qty: 0,
     });
 
+    const navigate = useNavigate();
+
     async function handleAddNewItem(evt) {
         evt.preventDefault();
         const createItem = {...newItem}
         const item = await shopitemsAPI.newItem(createItem);
+        setShopItems(item)
+        navigate('/dashboard')        
         setNewItem({
             name: "",
             category: "63178ae0d1d9b394b96fe304",
@@ -80,7 +85,7 @@ export default function NewItemPage ({setLists}) {
                     defaultValue='0'
                     onChange={handleChange}
                 />
-                <button type="submit"> Submit</button>
+                <button type="submit" className="btn btn-light"> Submit</button>
             </form>
         </>
     );

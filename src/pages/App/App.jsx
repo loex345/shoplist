@@ -27,7 +27,7 @@ useEffect(function() {
   }
   getItems();
 
- },[user]);
+ },[]);
 
 
   return (
@@ -37,11 +37,11 @@ useEffect(function() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path='/list/newItem' element={<NewItemPage setLists={setLists}/>} />
+            <Route path='/list/newItem' element={<NewItemPage setShopItems={setShopItems}/>} />
             <Route path='/list/dashboard' element={<Dashboard user={user} shopItems={shopItems} lists={lists} setLists={setLists}/>} />
             <Route path='/list' element={<PrintListpage />} />
             <Route path='/list/newList' element={<NewListPage shopItems={shopItems} lists={lists} setLists={setLists} />} />
-            <Route path='/list/:id' element={<ListUpdatePage lists={lists} setLists={setLists} shopItems={shopItems}/>} />
+            <Route path='/list/:id' element={<ListUpdatePage lists={lists} setLists={setLists} shopItems={shopItems} user={user}/>} />
             <Route path='/*' element={<Navigate to='/list/dashboard'/>} />
           </Routes>
         </>

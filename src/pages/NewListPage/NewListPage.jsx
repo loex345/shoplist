@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom"
 import * as listsAPI from '../../utilities/list-api'
 import NewListPageItem from '../../components/NewListPageItem/NewListPageItem';
+import "../NewListPage/NewListPage.css"
 
 export default function NewListPage( {shopItems, lists, setLists} ) {
 
@@ -86,11 +87,18 @@ export default function NewListPage( {shopItems, lists, setLists} ) {
       onChange={handleChange}
       required
       />
-      <label> Items </label>
+       <h1>
+       My Items 
+        </h1>
+       <div id="cart">
         {cartList}
-      <button type="submit">Submit List</button>
+      </div>
+      <button type="submit" className="btn btn-light">Submit List</button>
     </form>
+      <h1>Items available for list</h1>
+    <div id="item">
     {itemList}
+    </div>
     </>
 
   );
