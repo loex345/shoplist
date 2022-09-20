@@ -6,9 +6,9 @@ export default function LandingPage({ setUser }) {
     const [showAuth, setShowAuth] = useState(false);
 
     return (
-    <div>
-        <div id="landingpage" className="d-flex justify-content-center">
+    <div className="landingPageContainer">
             <h1> Welcome to Shop List</h1>         
+        <div id="landingpage" className="d-flex justify-content-center">
         { showAuth ?
             <AuthPage setUser={setUser}/>
             :
