@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom"
+import * as render from 'react-dom'
 import DisplayItemDetails from "../../components/DisplayItemDetails/DisplayItemDetails";
 import * as commentAPI from "../../utilities/comment-api";
 import * as listsAPI from '../../utilities/list-api';
@@ -45,6 +46,8 @@ export default function ListsDetailPage ({ lists, setLists, user }) {
             [evt.target.name]: evt.target.value
         });
     }
+    // render(<DisplayItemDetails />);
+    console.log(list[0].user._id,' user ', user._id);
 
     return (
         <>
