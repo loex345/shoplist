@@ -16,7 +16,7 @@ import ListUpdatePage from '../ListUpdatePage/ListUpdatePage';
 export default function App() {
  const [user, setUser] = useState(getUser());
  const [shopItems, setShopItems] = useState([])
- const [lists, setLists] = useState([])
+ const [lists, setLists] = useState([{}])
 
 useEffect(function() { 
   async function getItems() {

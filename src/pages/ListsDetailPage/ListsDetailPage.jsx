@@ -47,7 +47,8 @@ export default function ListsDetailPage ({ lists, setLists, user }) {
         });
     }
     // render(<DisplayItemDetails />);
-    console.log(list[0].user._id,' user ', user._id);
+    console.log(user,'user');
+    console.log(list,'list'); // list has no user until render how do force my list to rerender
 
     return (
         <>
@@ -69,7 +70,8 @@ export default function ListsDetailPage ({ lists, setLists, user }) {
                 <button type="submit" className="btn btn-light"> Add comment</button>
             </form>
             <span></span>
-        {user._id === list[0].user._id ? 
+        
+        {user._id === list[0].user?._id ? 
         <button type="button" className="btn btn-light btn-sm" onClick={() => handleRemove(id)}>Delete {list.listname}</button> 
         : 
         <em> You are not the creator of this List</em>
