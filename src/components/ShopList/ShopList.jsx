@@ -22,7 +22,7 @@ export default function ShopList ({ lists, setLists, user }) {
     return (
         <>
         <h1 id="ShoplistTitle"> Lists </h1>
-            <div className="card shadow-sm">
+            <div className="card shadow-sm ShopList">
                 {listItem}
             </div>
         </>

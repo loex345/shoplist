@@ -17,7 +17,7 @@ export default function GroceryList({ shopItems }){
     return (
         <>
             <h1>List of items</h1>
-                <div className="card shadow-sm">
+                <div className="card shadow-sm GroceryList">
                     {shopItem}
             </div>
         </>
