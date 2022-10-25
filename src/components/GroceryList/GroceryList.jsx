@@ -16,10 +16,12 @@ export default function GroceryList({ shopItems }){
         );
     return (
         <>
+         <div className='container'>
             <h1>List of items</h1>
-                <div className="card shadow-sm GroceryList">
+                <div className="card shadow-sm">
                     {shopItem}
             </div>
+         </div>
         </>
     );
 }

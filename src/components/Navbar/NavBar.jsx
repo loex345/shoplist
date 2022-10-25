@@ -10,7 +10,7 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <nav className="navBar">
+    <nav className="navbar navbar-expand-lg">
       <Link to='/list/dashboard'>Dashboard</Link>
       &nbsp; | &nbsp;
       <Link to='/list/newItem'>Add List/Item </Link>

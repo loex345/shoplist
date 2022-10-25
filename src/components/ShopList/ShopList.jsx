@@ -21,10 +21,12 @@ export default function ShopList ({ lists, setLists, user }) {
    
     return (
         <>
+        <div className='container'>
         <h1 id="ShoplistTitle"> Lists </h1>
             <div className="card shadow-sm ShopList">
                 {listItem}
             </div>
+        </div>
         </>
 
     );
