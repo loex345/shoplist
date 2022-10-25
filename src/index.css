@@ -1,8 +1,3 @@
-body {
-  height: 100%;
-  width: 100%;
-  display: flex;
-}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -32,6 +27,8 @@ body {
   padding: 2vmin;
   height: 100vh;
   color:whitesmoke;
+  height: 100%;
+  width: 100%;
 }
 
 form {
