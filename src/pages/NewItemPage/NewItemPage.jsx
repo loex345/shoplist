@@ -38,7 +38,9 @@ export default function NewItemPage ({setShopItems}) {
 
     return (
         <>
+        <div className="d-flex justify-content-center">
             <h1>New Item Page</h1>
+            </div>
             <span></span>
             <span></span>
             <form onSubmit={handleAddNewItem}>
@@ -67,7 +69,7 @@ export default function NewItemPage ({setShopItems}) {
                     name="discription"
                     value={newItem.discription}
                     onChange={handleChange}
-                >
+                    >
                 </textarea>
                 <label>Cost</label>
                 <input
@@ -76,7 +78,7 @@ export default function NewItemPage ({setShopItems}) {
                     value={newItem.cost}
                     defaultValue='0'
                     onChange={handleChange}
-                />
+                    />
                 <label>Qty</label>
                 <input
                     type="number"
@@ -84,7 +86,7 @@ export default function NewItemPage ({setShopItems}) {
                     value={newItem.qty}
                     defaultValue='0'
                     onChange={handleChange}
-                />
+                    />
                 <button type="submit" className="btn btn-light"> Submit</button>
             </form>
         </>

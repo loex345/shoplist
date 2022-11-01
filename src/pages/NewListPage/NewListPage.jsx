@@ -76,8 +76,10 @@ export default function NewListPage( {shopItems, lists, setLists} ) {
        ); 
 
   return (
-    <>
+  <>
+    <div className="d-flex justify-content-center">
     <h1>New List Page</h1>
+    </div>
     <form onSubmit={handleAddNewList}>
       <label> Shopping List Name</label>
       <input
@@ -95,7 +97,9 @@ export default function NewListPage( {shopItems, lists, setLists} ) {
       </div>
       <button type="submit" className="btn btn-light">Submit List</button>
     </form>
+    <div className="d-flex justify-content-center">
       <h1>Items available for list</h1>
+    </div>
     <div id="item">
     {itemList}
     </div>

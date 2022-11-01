@@ -36,3 +36,9 @@ form {
   align-items: center;
   flex-direction: column;
 }
+
+input[type="text"], textarea {
+
+  background-color : white; 
+
+}
