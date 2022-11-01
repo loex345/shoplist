@@ -37,7 +37,7 @@ form {
   flex-direction: column;
 }
 
-input[type="text"], textarea {
+input, textarea {
 
   background-color : white; 
 
