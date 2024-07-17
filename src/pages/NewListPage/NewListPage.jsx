@@ -67,14 +67,37 @@ export default function NewListPage( {shopItems, lists, setLists} ) {
       items:[]
     })
   }
-  
-  const cartList = selectedOptions.map((item, idx) => 
-       <NewListPageItem item={item} key={item._id} updateCart={removeFromCart} />
-       ); 
-   const itemList = notSelectedOptions.map((item, idx) => 
-       <NewListPageItem item={item} key={item._id} updateCart={addToCart} />
-       ); 
+  // Display by By Category
+  const groupByCategory = (items) => {
+    return items.reduce((acc,item)=> {
+     const category =item.category || 'Uncategorized';
+     if(!acc[category])acc[category]=[];
+     acc[category].push(item);
+     return acc;
+    },{});
+  }
 
+  const renderItemsByCategory = (items, updateCartFunction) => {
+    const groupItems = groupByCategory(items);
+    return Object.keys(groupItems).map(category=>(
+    <div key={category}>
+      <h3>{category}</h3>
+      {groupItems[category].map(item=>(
+        <NewListPageItem item={item} key={item._id} updateCart={updateCartFunction}/>
+      ))}
+    </div>
+    ));
+  };
+  // const cartList = selectedOptions.map((item, idx) => 
+  //      <NewListPageItem item={item} key={item._id} updateCart={removeFromCart} />
+  //      ); 
+  //  const itemList = notSelectedOptions.map((item, idx) => 
+  //      <NewListPageItem item={item} key={item._id} updateCart={addToCart} />
+  //      ); 
+
+    //add catogeries in put items in different catogeries
+  const cartList = renderItemsByCategory(selectedOptions, removeFromCart);
+  const itemList = renderItemsByCategory(notSelectedOptions, addToCart);
   return (
   <>
     <div className="d-flex justify-content-center">
