@@ -5,7 +5,7 @@ import * as shopitemsAPI from '../../utilities/shopitem-api';
 export default function NewItemPage ({setShopItems}) {
     const [newItem, setNewItem] = useState({
         name: "",
-        category: "63178ae0d1d9b394b96fe304",
+        category: "",
         discription: "",
         cost: 0,
         qty: 0,
@@ -17,11 +17,11 @@ export default function NewItemPage ({setShopItems}) {
         evt.preventDefault();
         const createItem = {...newItem}
         const item = await shopitemsAPI.newItem(createItem);
-        setShopItems(item)
+        setShopItems(prevItems =>[...prevItems,item] )
         navigate('/dashboard')        
         setNewItem({
             name: "",
-            category: "63178ae0d1d9b394b96fe304",
+            category: "",
             discription: "",
             cost: 0,
             qty: 0,
@@ -58,11 +58,11 @@ export default function NewItemPage ({setShopItems}) {
                     name="category"
                     value={newItem.category}
                     onChange={handleChange}>
-                    <option value="63178ae0d1d9b394b96fe304"> Produce</option>
-                    <option value="63178ae0d1d9b394b96fe305"> Dry Goods</option>
-                    <option value="63178ae0d1d9b394b96fe306"> Pasta</option>
-                    <option value="63178ae0d1d9b394b96fe307"> Condiments</option>
-                    <option value="63178ae0d1d9b394b96fe308"> General Merchandise</option>
+                    <option value="Produce"> Produce</option>
+                    <option value="Dry Goods"> Dry Goods</option>
+                    <option value="Pasta"> Pasta</option>
+                    <option value="Condiments"> Condiments</option>
+                    <option value="General Merchandise"> General Merchandise</option>
                 </select>
                 <label>Discription</label>
                 <textarea
@@ -76,7 +76,6 @@ export default function NewItemPage ({setShopItems}) {
                     type="number"
                     name="cost"
                     value={newItem.cost}
-                    defaultValue='0'
                     onChange={handleChange}
                     />
                 <label>Qty</label>
@@ -84,7 +83,6 @@ export default function NewItemPage ({setShopItems}) {
                     type="number"
                     name="qty"
                     value={newItem.qty}
-                    defaultValue='0'
                     onChange={handleChange}
                     />
                 <button type="submit" className="btn btn-light"> Submit</button>

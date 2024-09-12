@@ -1,13 +1,29 @@
 import './GroceryList.css';
 import GroceryListItem from '../GroceryListItem/GroceryListItem';
 import { Link } from "react-router-dom";
+import { useState, useEffect } from 'react';
 
-export default function GroceryList({ shopItems }){
+export default function GroceryList({ shopItems: initialShopItems }){
      //typeof((shopItems)==="object") ? shopItems = Object.values(shopItems): shopItems
-     if (typeof shopItems === "object") {
-        shopItems = Object.values(shopItems);
-    }    
-        // Convert this to array create a turney if no object exists then run shopitems as presented if not do object.keys to make array
+   
+    const [shopItems, setShopItems] = useState(initialShopItems)
+
+    useEffect(() =>{
+        if (typeof initialShopItems === "object"){
+            setShopItems(Object.values(initialShopItems));
+        } else {
+            setShopItems(initialShopItems);
+        }
+    },[initialShopItems]);
+    
+    const addItem = (newItem) => {
+        setShopItems([...shopItems, newItem]);
+    };
+ // if (typeof shopItems === "object") {
+    //     const shopItems = Object.values(shopItems);
+    // } 
+   
+
     const shopItem = shopItems.map((item, idx) =>
     <div key={item._id}>
     
@@ -19,7 +35,7 @@ export default function GroceryList({ shopItems }){
         </Link>
     </div>
         );
-        console.log(shopItem)
+
     return (
         <>
          <div className='container'>

@@ -16,7 +16,7 @@ import ListUpdatePage from '../ListUpdatePage/ListUpdatePage';
 export default function App() {
  const [user, setUser] = useState(getUser());
  const [shopItems, setShopItems] = useState([])
- const [lists, setLists] = useState([{}])
+ const [lists, setLists] = useState([])
 
 useEffect(function() { 
   async function getItems() {
@@ -29,7 +29,6 @@ useEffect(function() {
 
  },[user]);
 
-
   return (
     <main className="App">
       { user ?
@@ -37,8 +36,8 @@ useEffect(function() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path='/list/newItem' element={<NewItemPage setShopItems={setShopItems}/>} />
-            <Route path='/list/dashboard' element={<Dashboard user={user} shopItems={shopItems} lists={lists} setLists={setLists}/>} />
+            <Route path='/list/newItem' element={<NewItemPage setShopItems={setShopItems} shopItems={shopItems} />} />
+            <Route path='/list/dashboard' element={<Dashboard user={user} shopItems={shopItems} lists={lists} setLists={setLists} setShopItems={setShopItems}/>} />
             <Route path='/list' element={<PrintListpage />} />
             <Route path='/list/newList' element={<NewListPage shopItems={shopItems} lists={lists} setLists={setLists} />} />
             <Route path='/list/:id' element={<ListUpdatePage lists={lists} setLists={setLists} shopItems={shopItems} user={user}/>} />

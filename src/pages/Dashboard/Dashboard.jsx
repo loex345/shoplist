@@ -2,7 +2,7 @@ import GroceryList from "../../components/GroceryList/GroceryList";
 import ShopList from '../../components/ShopList/ShopList';
 import '../Dashboard/Dashboard.css'
 
-export default function Dashboard({ user, shopItems, lists, setLists}){
+export default function Dashboard({ user, shopItems, lists, setLists, setShopItems}){
     return (
         <main>
             <section className="py-5 d-flex justify-content-center text-center container">
@@ -15,7 +15,7 @@ export default function Dashboard({ user, shopItems, lists, setLists}){
                                     <hr/>
                                </div>
                                 <div className="col">
-                            <GroceryList shopItems={shopItems} user={user}/>
+                            <GroceryList shopItems={shopItems} user={user} setShopItems={setShopItems}/>
                             </div>
                         </div>
                     </div>
