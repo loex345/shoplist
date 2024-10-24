@@ -3,6 +3,7 @@ const ShopItem = require('../../models/shopItem');
 module.exports = {
     index,
     createItem,
+    deleteItem,
 }
 
 async function index(req, res) {
@@ -16,3 +17,9 @@ async function createItem (req, res) {
     res.json(item)
 
 }
+async function deleteItem (req, res){
+    await ShopItem.findOneAndDelete({_id: req.params.id, user: req.user._id})
+    const item = await ShopItem.find({}).populate('user').exec();
+    res.json(item)
+}
+//Function to delete delete item
